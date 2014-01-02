@@ -21,5 +21,5 @@ sc: build
 	$(SC)
 
 hlint:
-	$(STYLE) -i src/**/*.hs
+	$(STYLE) -i src/**/*.hs test/**/*.hs
 	hlint src/ --report=$(DIST)/hlint.html

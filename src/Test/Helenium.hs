@@ -1,13 +1,13 @@
 module Test.Helenium
        (
-         module Test.Helenium.Element.Button
-       , module Test.Helenium.Element.Input
-       , module Test.Helenium.Element.Link
-       , module Test.Helenium.Element.Types
+         module Button
+       , module Input
+       , module Link
+       , module Types
        )
        where
 
-import Test.Helenium.Element.Button
-import Test.Helenium.Element.Input
-import Test.Helenium.Element.Link
-import Test.Helenium.Element.Types
+import           Test.Helenium.Element.Button as Button
+import           Test.Helenium.Element.Input  as Input
+import           Test.Helenium.Element.Link   as Link
+import           Test.Helenium.Element.Types  as Types
