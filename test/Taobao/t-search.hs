@@ -2,11 +2,11 @@
 
 module Main where
 
-import           Control.Monad.IO.Class   (liftIO)
+import           Control.Monad.IO.Class    (liftIO)
 import           Test.WebDriver
 import           Test.WebDriver.Commands
 
-import qualified Taobao.Components.Search as Search
+import qualified Taobao.Components.Search  as Search
 import qualified Taobao.Pages.SearchResult as SR
 
 url :: String

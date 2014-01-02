@@ -8,8 +8,7 @@ import Test.WebDriver.Commands
 import Test.WebDriver.Commands.Wait
 
 import Test.Helenium
-
-defaultWaitTime = 3000
+import Taobao.Types
 
 items :: WD [Element]
 items = findElems $ ByCSS "div.item"
@@ -17,8 +16,6 @@ items = findElems $ ByCSS "div.item"
 -- | Whether the component is display (base on all its elements presents)
 --
 isDisplay :: WD Bool
-isDisplay = waitUntil defaultWaitTime
-            $ do
-              xs <- items
-              --liftIO $ print "Find search result " ++ (length xs)
-              return $ length xs > 0
+isDisplay = waitUntil defaultWaitTime $ do
+  xs <- items
+  return $ length xs > 0
