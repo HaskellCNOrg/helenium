@@ -2,21 +2,29 @@
 
 module Test.Helenium.Element.Types where
 
+
+import qualified Test.WebDriver as C
+import qualified Test.WebDriver.Commands as C
+
 import Control.Monad
-import Test.WebDriver
 import Data.Text (Text)
 
 class Clickable a where
-  click :: a -> WD ()
+  click :: a -> C.WD ()
 
 class Fillable a where
   -- | element -> Submit or not -> input value
-  fill :: a -> Bool -> Text -> WD ()
+  fill :: a -> Bool -> Text -> C.WD ()
 
 class Viewable a where
-  exists :: a -> WD Bool
+  exists :: a -> C.WD Bool
 
--- TODO:
---instance forall a. Viewable a => Viewable [a] where
---existsAll :: forall a. Viewable a => [a] -> WD Bool
---existsAll xs = liftM and (mapM exists xs)
+--------------------------------------------------
+
+data Button = Button (C.WD C.Element)
+data Input = Input (C.WD C.Element)
+
+data WebEl a where
+  button :: C.Selector -> WebEl Button
+  input :: C.Selector -> WebEl Input
+
